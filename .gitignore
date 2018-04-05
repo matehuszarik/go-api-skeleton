@@ -1,0 +1,4 @@
+# Dependency management
+vendor/
+Gopkg.lock
+Gopkg.toml
