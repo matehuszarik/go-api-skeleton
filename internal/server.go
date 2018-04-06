@@ -46,5 +46,5 @@ func (s Server) Serve(port int) error {
 
 // ServeTLS ...
 func (s Server) ServeTLS(port int, certFile string, keyFile string) error {
-	return s.router.RunTLS(fmt.Sprint(":", port), "", "")
+	return s.router.RunTLS(fmt.Sprint(":", port), certFile, keyFile)
 }
