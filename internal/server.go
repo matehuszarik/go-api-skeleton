@@ -40,6 +40,11 @@ func (s Server) setupHandlers() {
 }
 
 // Serve ...
-func (s Server) Serve(port int) {
-	s.router.Run(fmt.Sprint(":", port))
+func (s Server) Serve(port int) error {
+	return s.router.Run(fmt.Sprint(":", port))
+}
+
+// ServeTLS ...
+func (s Server) ServeTLS(port int, certFile string, keyFile string) error {
+	return s.router.RunTLS(fmt.Sprint(":", port), "", "")
 }

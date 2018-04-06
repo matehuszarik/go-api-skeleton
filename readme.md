@@ -10,3 +10,4 @@ Sample project for bootstrapping HTTP services.
 API_KEYS=a,b,c
 PORT=1234
 ```
+4. Rename the imports by running `find . --type f --exec sed -i '' -e 's,github.com/matehuszarik/go-api-skeleton,name/of/your/path,g' {} +` on macOS
