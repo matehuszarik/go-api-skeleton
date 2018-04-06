@@ -5,6 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/matehuszarik/go-api-skeleton/internal/handlers"
+	"github.com/matehuszarik/go-api-skeleton/internal/middlewares"
 )
 
 // Server ...
@@ -13,13 +14,14 @@ type Server struct {
 }
 
 // NewServer ...
-func NewServer() Server {
+func NewServer(apiKeys []string) Server {
 	s := Server{
 		router: gin.New(),
 	}
 
 	s.router.Use(
 		gin.Logger(),
+		middlewares.APIKey(apiKeys),
 		gin.Recovery(),
 	)
 

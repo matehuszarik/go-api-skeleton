@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	s := internal.NewServer()
+	s := internal.NewServer(config.GetConfiguration().APIKeys)
 	s.Serve(config.GetConfiguration().Port)
 }
