@@ -1,7 +1,6 @@
 package middlewares
 
 import (
-	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -14,7 +13,6 @@ var HeaderAPIKey = "X-API-Key"
 func APIKey(allowedKeys []string) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		apiKey := c.Request.Header.Get(HeaderAPIKey)
-		log.Println(apiKey)
 
 		if apiKey == "" {
 			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{
